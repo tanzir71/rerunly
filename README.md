@@ -74,6 +74,17 @@ npm run test:e2e   # Build and load the extension in Playwright Chromium
 npm run zip        # Create the unpacked-release archive
 ```
 
+## Landing page and GitHub Pages
+
+The marketing site is in `site/` and builds to `site-dist/` with relative asset URLs, so it works from both a GitHub Pages project subpath and a custom domain.
+
+```powershell
+npm run dev:site
+npm run build:site
+```
+
+The included GitHub Actions workflow publishes `site-dist/` whenever landing-page files change on `main`. In the repository settings, select **GitHub Actions** as the Pages source; no repository-name-specific base path is required.
+
 The visual E2E fixture in `e2e/fixtures/visual-task.html` exposes success, validation-error, overlay, password-redaction, and CAPTCHA states for manual model testing.
 
 ## Current V1 boundaries
