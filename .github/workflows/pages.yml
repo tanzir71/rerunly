@@ -3,11 +3,6 @@ name: Deploy landing page to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "site/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -35,8 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build extension package
+        run: npm run zip
+
       - name: Build landing page
         run: npm run build:site
+
+      - name: Add extension download
+        run: |
+          mkdir -p site-dist/downloads
+          cp "$(find .output -maxdepth 1 -name '*-chrome.zip' -print -quit)" site-dist/downloads/rerunly-extension.zip
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
