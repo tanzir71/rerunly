@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rerunly visual verification fixture</title>
+    <style>
+      body { font: 16px system-ui; max-width: 680px; margin: 60px auto; padding: 24px; color: #172034; }
+      .panel { padding: 24px; border: 1px solid #ccd4e3; border-radius: 16px; box-shadow: 0 18px 40px #16213a18; }
+      label { display: block; margin: 16px 0; }
+      input { display: block; width: 100%; margin-top: 6px; padding: 10px; box-sizing: border-box; }
+      button { border: 0; border-radius: 9px; padding: 11px 16px; color: white; background: #4057b7; }
+      #result, #error, #captcha, #overlay { display: none; margin-top: 16px; padding: 12px; border-radius: 9px; }
+      #result { color: #075f3b; background: #d8fbe9; } #error { color: #8b1424; background: #ffe0e4; }
+      #captcha { color: #6e4c02; background: #ffedbe; }
+      #overlay { position: fixed; inset: 20%; background: white; border: 2px solid #4057b7; box-shadow: 0 0 0 100vmax #1118; }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Visual verification fixture</h1>
+      <p>This page deliberately exposes recoverable and blocked states.</p>
+      <label>Email <input id="email" type="email" autocomplete="email" /></label>
+      <label>Protected value <input id="protected" type="password" autocomplete="current-password" /></label>
+      <button id="submit">Continue</button>
+      <button id="show-overlay">Show overlay</button>
+      <button id="show-captcha">Show CAPTCHA</button>
+      <div id="result" role="status">Done — the fixture completed successfully.</div>
+      <div id="error" role="alert">Enter a valid email before continuing.</div>
+      <div id="captcha" role="alert">CAPTCHA: manual verification required.</div>
+    </main>
+    <div id="overlay" role="dialog"><h2>Unexpected dialog</h2><button id="close-overlay">Dismiss</button></div>
+    <script>
+      const email = document.querySelector('#email');
+      const result = document.querySelector('#result');
+      const error = document.querySelector('#error');
+      document.querySelector('#submit').addEventListener('click', () => {
+        const valid = email.value.includes('@');
+        result.style.display = valid ? 'block' : 'none';
+        error.style.display = valid ? 'none' : 'block';
+      });
+      document.querySelector('#show-overlay').addEventListener('click', () => document.querySelector('#overlay').style.display = 'block');
+      document.querySelector('#close-overlay').addEventListener('click', () => document.querySelector('#overlay').style.display = 'none');
+      document.querySelector('#show-captcha').addEventListener('click', () => document.querySelector('#captcha').style.display = 'block');
+    </script>
+  </body>
+</html>

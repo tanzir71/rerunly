@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rerunly — Visually Verified AI Browser Agent</title>
+    <meta name="description" content="Save and rerun browser tasks with OpenRouter or LM Studio models, visual verification, and encrypted local secrets." />
+    <meta name="theme-color" content="#f2eee6" />
+    <meta property="og:title" content="Rerunly — Visually Verified AI Browser Agent" />
+    <meta property="og:description" content="A browser agent that checks its work after every action." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Rerunly home">
+        <span class="brand-mark"><b>r</b><i></i></span>
+        <span>Rerunly</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#how">How it works</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#security">Security</a>
+        <a href="#models">Models</a>
+      </nav>
+      <a class="nav-cta" href="#install">Get Rerunly <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Visually verified browser work</p>
+          <h1>Your browser agent,<br /><em>with receipts.</em></h1>
+          <p class="hero-lede">Rerunly sees the page, takes one action, captures the result, and verifies what actually happened before it continues.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#install">Install for Chrome <span>↗</span></a>
+            <a class="button button-light" href="#how">See the verification loop</a>
+          </div>
+          <p class="quiet-proof"><span>●</span> No backend &nbsp;·&nbsp; No telemetry &nbsp;·&nbsp; OpenRouter or LM Studio</p>
+        </div>
+
+        <div class="product-stage" aria-label="Rerunly browser side-panel preview">
+          <div class="soft-glow"></div>
+          <div class="browser-window">
+            <div class="browser-bar">
+              <span class="traffic red"></span><span class="traffic amber"></span><span class="traffic green"></span>
+              <div class="address">workspace.example/quotes</div>
+              <span class="browser-dot"></span><span class="browser-dot"></span>
+            </div>
+            <div class="browser-content">
+              <section class="demo-page">
+                <div class="demo-kicker">Supplier workspace</div>
+                <h2>Prepare a quote</h2>
+                <div class="price-row"><span>Best verified price</span><strong>$184.20</strong><small>Ready</small></div>
+                <label>Supplier quote</label>
+                <div class="demo-input"><span>$184.20</span><b>✓ Valid</b></div>
+                <div class="demo-grid"><div></div><div></div><div></div><div></div></div>
+              </section>
+
+              <aside class="agent-panel">
+                <div class="panel-head">
+                  <div class="mini-wordmark"><span class="brand-mark tiny"><b>r</b><i></i></span><strong>Rerunly</strong></div>
+                  <span class="visual-pill"><i></i> Visual access active</span>
+                </div>
+                <div class="panel-body">
+                  <div class="run-title"><span>Live run</span><h3>Compare supplier prices</h3></div>
+                  <div class="run-meta"><span class="status">verifying</span><span>43s</span><span>9 actions</span></div>
+                  <div class="now-card"><small>Now</small><strong>Checking the result</strong><p>The quote form should display the selected price and a valid state.</p></div>
+                  <div class="timeline">
+                    <div><i class="done"></i><p><strong>Visual checkpoint</strong><span>Page stable and ready</span></p></div>
+                    <div><i class="done"></i><p><strong>Typed $184.20</strong><span>Fresh screenshot captured</span></p></div>
+                    <div><i class="active"></i><p><strong>Outcome verified</strong><span>Field value and confirmation agree</span></p></div>
+                  </div>
+                  <button class="stop-button">■ &nbsp; Stop</button>
+                </div>
+                <div class="panel-nav"><span class="selected">⌁<small>Chat</small></span><span>▷<small>Tasks</small></span><span>◇<small>Vault</small></span><span>◷<small>History</small></span><span>⚙<small>Settings</small></span></div>
+              </aside>
+            </div>
+          </div>
+          <div class="verification-note"><span>✓</span><div><strong>Verified visually</strong><small>Screenshot and page state agree</small></div></div>
+        </div>
+      </section>
+
+      <section class="manifesto">
+        <p>Most browser agents stop at <em>“I clicked it.”</em></p>
+        <h2>Rerunly waits to see<br />what the click actually did.</h2>
+      </section>
+
+      <section class="loop section-shell" id="how">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> The verification loop</p>
+          <h2>One action.<br />One fresh look.</h2>
+          <p>The model cannot race ahead on assumptions. Every state-changing action creates new visual evidence before the next decision.</p>
+        </div>
+        <div class="loop-steps">
+          <article><b>01</b><div><h3>Observe</h3><p>Capture the viewport, page structure, focus, errors, network failures, URL, and tabs.</p></div></article>
+          <article><b>02</b><div><h3>Act once</h3><p>Choose one fixed browser tool with a stated expected outcome and policy check.</p></div></article>
+          <article><b>03</b><div><h3>Capture</h3><p>Wait for stability, redact protected regions, and take a new screenshot automatically.</p></div></article>
+          <article class="accent-step"><b>04</b><div><h3>Verify or recover</h3><p>A separate vision pass decides whether to continue, try another strategy, pause, or finish.</p></div></article>
+        </div>
+      </section>
+
+      <section class="recovery section-shell">
+        <div class="recovery-visual">
+          <div class="mini-browser">
+            <div class="mini-bar"><i></i><i></i><i></i><span>inventory.example</span></div>
+            <div class="covered-page"><div class="skeleton long"></div><div class="skeleton"></div><button>Continue</button></div>
+            <div class="overlay-card"><small>Unexpected dialog</small><strong>Review needed</strong><p>The intended control is covered.</p><button>Dismiss</button></div>
+          </div>
+          <div class="recovery-path">
+            <div><span>!</span><p><strong>Recoverable failure</strong><small>Click target is covered</small></p></div>
+            <div><span>↳</span><p><strong>Changed strategy</strong><small>Dismiss overlay, then recapture</small></p></div>
+          </div>
+        </div>
+        <div class="recovery-copy">
+          <p class="eyebrow"><span></span> Recovery with evidence</p>
+          <h2>It notices when the page says <em>no.</em></h2>
+          <p>Validation errors, overlays, login walls, blank pages, wrong tabs, redirects, and missing confirmations become explicit recovery signals—not reasons to repeat the same click.</p>
+          <ul><li>At most two corrective attempts per intended step</li><li>Pause after three no-progress actions</li><li>Never finish on the model’s claim alone</li></ul>
+        </div>
+      </section>
+
+      <section class="tasks-section section-shell" id="tasks">
+        <div class="section-heading wide">
+          <p class="eyebrow"><span></span> Reusable browser work</p>
+          <h2>Save it once.<br />Play it whenever.</h2>
+          <p>A saved task keeps the intention and visible success criteria—not brittle screen coordinates—so it can replan against the page you have today.</p>
+        </div>
+        <div class="task-board">
+          <div class="task-board-head"><strong>Saved tasks</strong><button>+ New task</button></div>
+          <article><span class="task-index">01</span><div><h3>Compare supplier prices</h3><p>Find the lowest verified price and prepare the quote form.</p><small>2 origins &nbsp;·&nbsp; 30 max actions</small></div><button class="round-play">▶</button></article>
+          <article><span class="task-index">02</span><div><h3>Check inventory status</h3><p>Review the dashboard and capture current low-stock items.</p><small>1 origin &nbsp;·&nbsp; 20 max actions</small></div><button class="round-play">▶</button></article>
+          <article><span class="task-index">03</span><div><h3>Prepare weekly form</h3><p>Use saved variables, validate every field, and stop before submit.</p><small>1 protected value &nbsp;·&nbsp; manual Play</small></div><button class="round-play">▶</button></article>
+        </div>
+      </section>
+
+      <section class="security section-shell" id="security">
+        <div class="vault-card">
+          <div class="vault-top"><span class="vault-symbol">◇</span><span>AES-256-GCM · on this device</span></div>
+          <h3>Models get the alias.<br />The field gets the value.</h3>
+          <div class="secret-line"><code>{{secret:work_email}}</code><span>bound</span></div>
+          <div class="redacted-line"><span>██████████████</span><small>redacted before capture</small></div>
+        </div>
+        <div class="security-copy">
+          <p class="eyebrow"><span></span> Local encrypted vault</p>
+          <h2>Protected values stay out of the conversation.</h2>
+          <p>Rerunly decrypts only after checking the saved binding, origin, field hint, and stored grant. Passwords, OTPs, payments, cookies, and identity documents are never supported.</p>
+          <p class="fine-print">Visible pages can still contain unrelated sensitive information. Visual automation cannot guarantee perfect automatic removal of every sensitive item.</p>
+        </div>
+      </section>
+
+      <section class="models section-shell" id="models">
+        <div class="section-heading center">
+          <p class="eyebrow"><span></span> Bring your vision model</p>
+          <h2>Remote when you want it.<br />Local when you don’t.</h2>
+        </div>
+        <div class="provider-grid">
+          <article class="provider-card remote">
+            <div class="provider-label"><span>OR</span><small>Remote vision</small></div>
+            <h3>OpenRouter</h3>
+            <p>Choose a model that advertises image input and reliable tool calling. Redacted screenshots go to OpenRouter and the selected upstream provider.</p>
+            <code>openrouter.ai/api/v1</code>
+          </article>
+          <article class="provider-card local">
+            <div class="provider-label"><span>LM</span><small>Local vision</small></div>
+            <h3>LM Studio</h3>
+            <p>Use a loaded vision model with native tool use. Redacted screenshots stay on the configured local LM Studio endpoint.</p>
+            <code>localhost:1234/v1</code>
+          </article>
+        </div>
+        <p class="model-note">Play stays disabled until the selected model supports both vision and tool calling.</p>
+      </section>
+
+      <section class="install section-shell" id="install">
+        <div>
+          <p class="eyebrow"><span></span> Chrome 116+ · Manifest V3</p>
+          <h2>Save it. Play it.<br /><em>Rerun it.</em></h2>
+        </div>
+        <div class="install-steps">
+          <p><b>1</b><span>Build or download the unpacked extension.</span></p>
+          <p><b>2</b><span>Open <code>chrome://extensions</code> and enable Developer mode.</span></p>
+          <p><b>3</b><span>Load <code>.output/chrome-mv3</code>, then open the Rerunly side panel.</span></p>
+          <p><b>4</b><span>Connect OpenRouter or LM Studio and choose a compatible model.</span></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark" href="#top"><span class="brand-mark"><b>r</b><i></i></span><span>Rerunly</span></a>
+      <p>Visually verified browser work, under your control.</p>
+      <div><a href="#security">Privacy</a><a href="#how">Safety</a><a href="#models">Models</a></div>
+    </footer>
+  </body>
+</html>

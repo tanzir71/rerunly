@@ -1,0 +1,44 @@
+{
+  "name": "rerunly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rerunly — a visually verified AI browser agent for OpenRouter and LM Studio.",
+  "scripts": {
+    "dev": "wxt",
+    "dev:site": "vite site",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "capture:store": "npm run build && node scripts/capture-store-assets.mjs",
+    "build": "npm run generate:icons && wxt build",
+    "build:site": "vite build site --outDir ../site-dist --emptyOutDir",
+    "build:all": "npm run build && npm run build:site",
+    "build:sites": "npm run build:site && node scripts/build-sites-bundle.mjs",
+    "zip": "npm run generate:icons && wxt zip",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:lmstudio": "vitest run tests/lmstudio-live.test.ts",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build && playwright test"
+  },
+  "dependencies": {
+    "@wxt-dev/module-react": "^1.2.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "wxt": "^0.21.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/chrome": "^0.1.37",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "5.1.4",
+    "fake-indexeddb": "^6.2.5",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.5",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "@vitejs/plugin-react": "5.1.4"
+  }
+}
