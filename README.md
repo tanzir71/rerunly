@@ -20,10 +20,10 @@ npm install
 npm run build
 ```
 
-Then open `chrome://extensions`, enable **Developer mode**, select **Load unpacked**, and choose:
+Then open `chrome://extensions`, enable **Developer mode**, select **Load unpacked**, and choose the build output folder inside this repository:
 
 ```text
-C:\Users\tanzir\Desktop\lmstudio-browser\.output\chrome-mv3
+<repo>/.output/chrome-mv3
 ```
 
 Pin Rerunly and click its toolbar icon to open the side panel.
